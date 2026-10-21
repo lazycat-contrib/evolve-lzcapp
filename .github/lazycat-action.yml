@@ -26,7 +26,9 @@ images:
     service: evolve
     source: ghcr.io/dockers-x/evolve
     channel: custom
-    sort: created
+    # `created` would compare the image's config.created (older than the pinned
+    # digest), so mutable channels use the Docker Hub-style tag update order.
+    sort: updated
     tag_regex: '^latest$'
     # Mutable `latest` channel: the Action pins the selected digest in the
     # Manifest's upstream reference instead of verifying a mirror copy.
