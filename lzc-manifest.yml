@@ -1,0 +1,36 @@
+application:
+  subdomain: evolve
+  background_task: true
+  multi_instance: false
+  public_path:
+    - /
+  upstreams:
+    - location: /
+      backend: http://evolve:80/
+
+services:
+  evolve:
+    # upstream: built by dockers-x/evolve (no upstream image or tags)
+    image: ghcr.1ms.run/dockers-x/evolve:latest@sha256:62571137f2c1381b769fe0181ba54eace393c3858aadf66f59ce820167874006
+    environment:
+      - TZ=Asia/Shanghai
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - -O
+        - /dev/null
+        - http://127.0.0.1/healthz
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+usage: |
+  Evolve（进化）是一款网页放置游戏：先在原生质阶段选择进化方向，培育出智慧生物，
+  带领他们发展科技与文明，最终迈向星空、征服宇宙。
+
+  - 打开应用即可开始游戏，进度会自动保存在当前浏览器的 localStorage 中；
+  - 更换浏览器或清理浏览器数据会丢失存档，游戏内可导出/导入存档文本备份；
+  - 游戏基于时间推进，离线期间也会自动结算部分进度。

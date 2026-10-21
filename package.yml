@@ -1,0 +1,20 @@
+package: community.lazycat.app.evolve
+version: 1.4.10
+name: Evolve
+description: "An incremental game about evolving a civilization from primordial ooze to the stars"
+author: Peter Motschmann
+license: MPL-2.0
+homepage: https://github.com/pmotschmann/Evolve
+min_os_version: 1.5.0
+
+permissions:
+  required:
+    - net.internet
+
+locales:
+  zh:
+    name: "Evolve 进化"
+    description: "网页放置类进化游戏：从原生质中选择进化为某种智慧生物，带领种族走向繁荣，最终迈向星空征服宇宙"
+  en:
+    name: "Evolve"
+    description: "An incremental game about evolving a civilization from primordial ooze to the stars"
