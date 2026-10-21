@@ -32,9 +32,10 @@ images:
     version_regex: '^v(?P<version>[0-9]+\.[0-9]+\.[0-9]+)$'
     version_template: '{version}'
     delivery:
-      # Mirrors digest-pin mutable references, so this repo re-points the
-      # Manifest to the accelerated image on every published version.
-      mode: direct
+      # Immutable version tags support mirror delivery: the Manifest references
+      # the accelerated image and the Action verifies the digests match.
+      mode: mirror
+      require_digest_match: true
 
 stores:
   official:
