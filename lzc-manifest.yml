@@ -7,11 +7,10 @@ application:
   upstreams:
     - location: /
       backend: http://evolve:80/
-
 services:
   evolve:
-    # upstream: built by dockers-x/evolve (no upstream image or tags)
-    image: ghcr.1ms.run/dockers-x/evolve:latest@sha256:62571137f2c1381b769fe0181ba54eace393c3858aadf66f59ce820167874006
+    # upstream: ghcr.io/dockers-x/evolve:v1.4.10
+    image: ghcr.io/dockers-x/evolve:v1.4.10
     environment:
       - TZ=Asia/Shanghai
     healthcheck:
@@ -26,7 +25,6 @@ services:
       timeout: 5s
       retries: 3
       start_period: 10s
-
 usage: |
   Evolve（进化）是一款网页放置游戏：先在原生质阶段选择进化方向，培育出智慧生物，
   带领他们发展科技与文明，最终迈向星空、征服宇宙。
