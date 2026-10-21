@@ -28,9 +28,10 @@ images:
     channel: custom
     sort: created
     tag_regex: '^latest$'
+    # Mutable `latest` channel: the Action pins the selected digest in the
+    # Manifest's upstream reference instead of verifying a mirror copy.
     delivery:
-      mode: mirror
-      require_digest_match: true
+      mode: direct
 
 stores:
   official:
