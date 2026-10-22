@@ -10,7 +10,7 @@ application:
 services:
   evolve:
     # upstream: ghcr.io/dockers-x/evolve:v1.4.10
-    image: ghcr.io/dockers-x/evolve:v1.4.10
+    image: ghcr.1ms.run/dockers-x/evolve:v1.4.10
     environment:
       - TZ=Asia/Shanghai
     healthcheck:
